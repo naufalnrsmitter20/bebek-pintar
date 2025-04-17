@@ -56,8 +56,8 @@ export default function Fitur() {
               <div className="relative w-full h-[210px] bg-tertiary-300 rounded-[20px] overflow-hidden font-jakarta-sans">
                 <Image src={x.img} alt={x.title} className={x.className} />
               </div>
-              <h3 className="text-2xl font-bold mt-[20px]">{x.title}</h3>
-              <p className="text-base font-normal mt-[20px] text-tertiary-600">{x.desc}</p>
+              <h3 className="text-2xl text-black font-bold mt-[20px]">{x.title}</h3>
+              <p className="text-base font-medium mt-[20px] text-tertiary-800">{x.desc}</p>
             </div>
           ))}
         </div>

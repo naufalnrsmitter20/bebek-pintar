@@ -35,7 +35,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body className={`${anuphanSans.variable} ${plusJakartaSans.variable} ${youngSerif.variable} antialiased overflow-x-hidden`}>
+      <body className={`${anuphanSans.variable} ${plusJakartaSans.variable} ${youngSerif.variable} antialiased overflow-x-hidden bg-white`}>
         <AOSInit />
         <Navbar />
         <div>{children}</div>

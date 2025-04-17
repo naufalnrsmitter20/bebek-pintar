@@ -1,7 +1,11 @@
 import Image, { StaticImageData } from "next/image";
 import React from "react";
 import user from "@/public/svg/user-example.png";
+import reza from "@/public/svg/gambarreza.svg";
+import naufal from "@/public/svg/Naufal Keren.jpg";
 import kutip from "@/public/svg/kutip.svg";
+import orang1 from "@/public/svg/orang 1.jpg";
+import orang2 from "@/public/svg/orang 2.jpg";
 
 interface testimoniProps {
   author: string;
@@ -13,26 +17,26 @@ interface testimoniProps {
 export default function Testimoni() {
   const cardProperty: testimoniProps[] = [
     {
-      author: "Effi Malang",
-      img: user,
-      desc: "Sebagai ibu rumah tangga yang suka multitasking, ini cocok banget buat saya!",
-      status: "Ibu Rumah Tangga",
+      author: "Reza, Jakarta",
+      img: reza,
+      desc: "Suka banget! Nyampe kosan ga bingung nyari remote, cuman pake bebek pintar aja gampang",
+      status: "Mahasiswa",
     },
     {
-      author: "Effi Malang",
+      author: "Rey, Surabaya",
       img: user,
-      desc: "Sebagai ibu rumah tangga yang suka multitasking, ini cocok banget buat saya!",
-      status: "Ibu Rumah Tangga",
+      desc: "Harganya terjangkau tapi ga mengorbankan fungsionalitas. Mantap",
+      status: "Tech Enthusiast",
     },
     {
-      author: "Effi Malang",
-      img: user,
-      desc: "Sebagai ibu rumah tangga yang suka multitasking, ini cocok banget buat saya!",
-      status: "Ibu Rumah Tangga",
+      author: "Naufal, Malang",
+      img: naufal,
+      desc: "Awalnya cuman nyobain karena penasaran, ternyata works banget di kost, terima kasih bebek pintar",
+      status: "Mahasiswa",
     },
     {
-      author: "Effi Malang",
-      img: user,
+      author: "Effi, Jember",
+      img: orang1,
       desc: "Sebagai ibu rumah tangga yang suka multitasking, ini cocok banget buat saya!",
       status: "Ibu Rumah Tangga",
     },
@@ -52,24 +56,24 @@ export default function Testimoni() {
           <div className="grid grid-cols-1 sm:grid-cols-2 grid-flow-row-dense lg:grid-cols-3 gap-8">
             <div data-aos="fade-up" className="bg-tertiary-100 p-8 rounded-4xl shadow col-span-1 lg:col-span-2">
               <Image src={kutip} alt="kutip" className="mb-5" />
-              <p className="mb-4">Sebagai ibu rumah tangga yang suka multitasking, ini cocok banget buat saya!</p>
+              <p className="mb-4 text-black">Anakku suka naruh remot sembarangan, sekarang udah ga cape-cape lagi buat nyalain AC 👍🏻</p>
               <div className="flex items-center gap-3">
-                <Image src={user} alt="user example" className="w-10 h-10 rounded-xl object-cover" />
+                <Image src={orang2} alt="user example" className="w-10 h-10 rounded-xl object-cover" />
                 <div>
-                  <p className="font-medium text-lg text-black">Effi, Malang</p>
-                  <p className="text-base text-tertiary-500">Ibu Rumah Tangga</p>
+                  <p className="font-medium text-lg text-black">Deasy, Yogyakarta</p>
+                  <p className="text-base text-tertiary-500">Mahasiswa</p>
                 </div>
               </div>
             </div>
             {cardProperty.map((x, i) => (
               <div data-aos="fade-up" data-aos-delay={(i + 1) * 500} key={i} className="bg-tertiary-100 p-8 rounded-4xl shadow">
                 <Image src={kutip} alt="kutip" className="mb-5" />
-                <p className="mb-4">Sebagai ibu rumah tangga yang suka multitasking, ini cocok banget buat saya!</p>
+                <p className="mb-4 text-black">{x.desc}</p>
                 <div className="flex items-center gap-3">
-                  <Image src={user} alt="user example" className="w-10 h-10 rounded-xl object-cover" />
+                  <Image src={x.img} alt="user example" className="w-10 h-10 rounded-xl object-cover" />
                   <div>
-                    <p className="font-medium text-lg text-black">Effi, Malang</p>
-                    <p className="text-base text-tertiary-500">Ibu Rumah Tangga</p>
+                    <p className="font-medium text-lg text-black">{x.author}</p>
+                    <p className="text-base text-tertiary-500">{x.status}</p>
                   </div>
                 </div>
               </div>
