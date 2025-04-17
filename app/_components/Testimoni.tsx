@@ -61,7 +61,7 @@ export default function Testimoni() {
                 <Image src={orang2} alt="user example" className="w-10 h-10 rounded-xl object-cover" />
                 <div>
                   <p className="font-medium text-lg text-black">Deasy, Yogyakarta</p>
-                  <p className="text-base text-tertiary-500">Mahasiswa</p>
+                  <p className="text-base text-tertiary-500">Ibu Rumah Tangga</p>
                 </div>
               </div>
             </div>
