@@ -6,12 +6,12 @@ import Testimoni from "./_components/Testimoni";
 
 export default function Home() {
   return (
-    <>
+    <div className="bg-white">
       <Beranda />
       <Fitur />
       <Testimoni />
       <KontenKami />
       <MediaSosial />
-    </>
+    </div>
   );
 }
