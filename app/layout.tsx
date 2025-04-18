@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "./_components/utils/Navbar";
 import Footer from "./_components/utils/Footer";
 import AOSInit from "@/lib/AOSInit";
+import { Analytics } from "@vercel/analytics/react";
 
 const anuphanSans = Anuphan({
   variable: "--font-anuphan-sans",
@@ -38,7 +39,10 @@ export default function RootLayout({
       <body className={`${anuphanSans.variable} ${plusJakartaSans.variable} ${youngSerif.variable} antialiased overflow-x-hidden bg-white`}>
         <AOSInit />
         <Navbar />
-        <div>{children}</div>
+        <div>
+          {children}
+          <Analytics />
+        </div>
         <Footer />
       </body>
     </html>
