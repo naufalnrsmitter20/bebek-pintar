@@ -7,6 +7,7 @@ import MemphisLarge from "@/public/svg/memphis-xl.svg";
 import MemphisMedium from "@/public/svg/memphis-sm.svg";
 import MemphisSmall from "@/public/svg/memphis-xs.svg";
 import { MoveRight } from "lucide-react";
+import { sendEvent } from "@/lib/gtag";
 
 export default function Beranda() {
   return (
@@ -19,13 +20,12 @@ export default function Beranda() {
           </p>
           <button
             onClick={() => {
-              if (typeof window !== "undefined" && window.gtag) {
-                window.gtag("event", "click_whatsapp", {
-                  event_category: "interaksi_user",
-                  event_label: "Tombol WhatsApp",
-                  value: 1,
-                });
-              }
+              sendEvent({
+                action: "click_whatsapp",
+                category: "interaksi_user",
+                label: "Tombol WhatsApp",
+                value: 1,
+              });
 
               window.open("https://wa.link/yqdbei", "_blank");
             }}
