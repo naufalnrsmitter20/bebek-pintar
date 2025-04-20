@@ -7,10 +7,8 @@ import MemphisLarge from "@/public/svg/memphis-xl.svg";
 import MemphisMedium from "@/public/svg/memphis-sm.svg";
 import MemphisSmall from "@/public/svg/memphis-xs.svg";
 import { MoveRight } from "lucide-react";
-import { useRouter } from "next/navigation";
 
 export default function Beranda() {
-  const router = useRouter();
   return (
     <>
       <div id="beranda" className="bg-secondary-300 min-h-screen w-full h-full rounded-b-[104px] lg:rounded-b-[128px] relative flex flex-col justify-center px-[32px] md:px-[62px] xl:px-[124px] pb-28 lg:pt-64 overflow-hidden">
@@ -20,7 +18,17 @@ export default function Beranda() {
             Perkenalkan Si Bebek Pintar, bebek yang bisa jadi partner kamu dirumah dengan berbagai fitur menarik!{" "}
           </p>
           <button
-            onClick={() => router.push("https://wa.link/yqdbei")}
+            onClick={() => {
+              if (typeof window !== "undefined" && window.gtag) {
+                window.gtag("event", "click_whatsapp", {
+                  event_category: "interaksi_user",
+                  event_label: "Tombol WhatsApp",
+                  value: 1,
+                });
+              }
+
+              window.open("https://wa.link/yqdbei", "_blank");
+            }}
             data-aos="fade-right"
             data-aos-delay="1000"
             className="bg-primary-600 rounded-full px-6 py-3 cursor-pointer text-white text-[16px] font-medium mt-5 flex justify-center items-center gap-4"

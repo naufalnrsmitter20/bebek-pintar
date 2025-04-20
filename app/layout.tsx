@@ -5,6 +5,7 @@ import Navbar from "./_components/utils/Navbar";
 import Footer from "./_components/utils/Footer";
 import AOSInit from "@/lib/AOSInit";
 import { Analytics } from "@vercel/analytics/react";
+import Script from "next/script";
 
 const anuphanSans = Anuphan({
   variable: "--font-anuphan-sans",
@@ -36,6 +37,17 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth">
+      <head>
+        <Script src="https://www.googletagmanager.com/gtag/js?id=G-KXXE36EJMP" strategy="afterInteractive" />
+        <Script id="ga-script" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-KXXE36EJMP');
+          `}
+        </Script>
+      </head>
       <body className={`${anuphanSans.variable} ${plusJakartaSans.variable} ${youngSerif.variable} antialiased overflow-x-hidden bg-white`}>
         <AOSInit />
         <Navbar />
